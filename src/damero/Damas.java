@@ -16,12 +16,10 @@ public class Damas extends Ficha {
     
     @Override
     protected boolean mover(int fila, int columna) {
-        //VALIDACION 1
         if((color.equals("@") && fila-filaactual!=1) || 
                 (color.equals("O") && fila-filaactual!=-1))
             return false;
         
-        //VALIDACION 2
         if(fila>filaactual && columna!=columnaactual && color.equals("@")){
             if(Tablero.tablero[fila][columna]!=null)
                 return false;         
@@ -37,12 +35,10 @@ public class Damas extends Ficha {
 
     @Override
     protected boolean capturar(int fila, int columna) {
-        //VALIDACION 1
         if((color.equals("@") && fila-filaactual!=2) || 
                 (color.equals("O") && fila-filaactual!=-2))
             return false;
         
-        //VALIDACION 2
         if(fila>filaactual && columna!=columnaactual && color.equals("@")){
             if(Tablero.tablero[fila][columna]!=null)
                 return false;         
@@ -51,7 +47,6 @@ public class Damas extends Ficha {
                 return false;
         }
         
-        //VALIDACION 3
         if(fila>filaactual){
             if(columna-columnaactual==2){
                 if(Tablero.tablero[fila-1][columna-1]==null)
